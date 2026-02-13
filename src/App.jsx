@@ -20,11 +20,16 @@ export const App = () => {
 
   // DON'T change the code below
   const increase = () => {
-    addOne();
+    setCount(prev => {
+      const next = prev + 1;
 
-    if (count % 5 === 0) {
-      add100();
-    }
+      return next % 5 === 0 ? next + 100 : next;
+    });
+    // addOne();
+
+    // if (count % 5 === 0) {
+    //   add100();
+    // }
   };
 
   return (
